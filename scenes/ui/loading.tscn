@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://060qpmslghm2" path="res://scripts/ui/loading.gd" id="1_0ih7j"]
 [ext_resource type="Texture2D" uid="uid://c6yip40t68inp" path="res://assets/sprites/gift.png" id="2_wkfxc"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ir5ef"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ih7j"]
 bg_color = Color(1, 1, 1, 0)
 corner_radius_top_left = 1000
 corner_radius_top_right = 1000
@@ -207,7 +207,7 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(20, 20)
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ir5ef")
+theme_override_styles/panel = SubResource("StyleBoxFlat_0ih7j")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Components/Gift"]
 position = Vector2(32, 32)
