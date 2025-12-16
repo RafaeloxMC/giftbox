@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://bi0uvnu7iapm"]
+[gd_scene load_steps=16 format=3 uid="uid://bi0uvnu7iapm"]
 
 [ext_resource type="Texture2D" uid="uid://c6yip40t68inp" path="res://assets/sprites/gift.png" id="1_ir5ef"]
+[ext_resource type="Script" uid="uid://060qpmslghm2" path="res://scripts/ui/loading.gd" id="1_yc7uc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ir5ef"]
 bg_color = Color(1, 1, 1, 0)
@@ -92,7 +93,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_kc112")
 }],
 "loop": true,
-"name": &"default",
+"name": &"open",
 "speed": 5.0
 }]
 
@@ -103,11 +104,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_yc7uc")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Components" type="Control" parent="."]
@@ -117,6 +120,7 @@ offset_top = 212.0
 offset_right = 528.0
 offset_bottom = 276.0
 scale = Vector2(3.5, 3.5)
+mouse_filter = 2
 
 [node name="Gift" type="Control" parent="Components"]
 layout_mode = 1
@@ -132,6 +136,7 @@ offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(32, 32)
+mouse_filter = 2
 
 [node name="Panel" type="Panel" parent="Components/Gift"]
 modulate = Color(1, 1, 0, 1)
@@ -148,11 +153,13 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(20, 20)
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ir5ef")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Components/Gift"]
 position = Vector2(32, 32)
 sprite_frames = SubResource("SpriteFrames_4ay1x")
+animation = &"open"
 
 [node name="Label" type="Label" parent="Components"]
 layout_mode = 1
@@ -169,3 +176,5 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "click to open!"
 horizontal_alignment = 1
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
