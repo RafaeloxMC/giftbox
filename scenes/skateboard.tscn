@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://c268lwoyphi3"]
+
+[ext_resource type="Texture2D" uid="uid://bt3xymh5e82gw" path="res://assets/sprites/dexPack.png" id="1_78l3f"]
+[ext_resource type="Script" uid="uid://dxsuw78bwfjjw" path="res://scripts/skateboard.gd" id="1_ma3gn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ma3gn"]
+atlas = ExtResource("1_78l3f")
+region = Rect2(16, 16, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xjse7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ma3gn")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x81ey"]
+size = Vector2(22, 3)
+
+[node name="Skateboard" type="CharacterBody2D"]
+script = ExtResource("1_ma3gn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xjse7")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_x81ey")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(0, -20)
+zoom = Vector2(4, 4)
+position_smoothing_enabled = true
