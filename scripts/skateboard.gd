@@ -1,25 +1,46 @@
 extends CharacterBody2D
 
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+@export var push_accel: float = 200.0
+@export var brake_decel: float = 1200.0
+@export var ground_friction: float = 800.0
+@export var air_friction: float = 200.0
+@export var max_speed: float = 400.0
+@export var max_reverse_speed: float = 200.0
+@export var jump_velocity: float = -350.0
 
+var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
+var is_in_air: bool = false 
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
+	var on_floor: bool = is_on_floor()
+	
+	if not on_floor:
+		velocity.y += gravity * delta
+	
+	var target_vel_x: float = 0.0
+	var current_speed: float = velocity.x
+	
+	if Input.is_action_pressed("ui_right"):
+		target_vel_x = max_speed
+		velocity.x = move_toward(current_speed, target_vel_x, push_accel * delta)
+	elif Input.is_action_pressed("ui_left"):
+		target_vel_x = -max_reverse_speed
+		velocity.x = move_toward(current_speed, target_vel_x, brake_decel * delta)
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+		var friction: float = ground_friction if on_floor else air_friction
+		velocity.x = move_toward(current_speed, 0.0, friction * delta)
+	
+	if Input.is_action_just_pressed("ui_accept") and on_floor:
+		velocity.y = jump_velocity
+		animated_sprite_2d.play("jump")
+	
+	if on_floor and is_in_air:
+		animated_sprite_2d.play_backwards("jump")
+	
+	velocity.x = clamp(velocity.x, -max_reverse_speed, max_speed)
+	
+	is_in_air = !on_floor
+	
 	move_and_slide()
