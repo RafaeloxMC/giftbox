@@ -1,0 +1,66 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://c5ppq0el7ui6l"]
+
+[ext_resource type="Texture2D" uid="uid://cjhkhmcgu1uch" path="res://assets/sprites/parallax_field.png" id="1_t83t6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2aw8"]
+atlas = ExtResource("1_t83t6")
+region = Rect2(320, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6okp"]
+atlas = ExtResource("1_t83t6")
+region = Rect2(1280, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dgjee"]
+atlas = ExtResource("1_t83t6")
+region = Rect2(640, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_quimm"]
+atlas = ExtResource("1_t83t6")
+region = Rect2(960, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yvlf7"]
+atlas = ExtResource("1_t83t6")
+region = Rect2(0, 0, 320, 180)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m2aw8")
+}],
+"loop": true,
+"name": &"clouds",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6okp")
+}],
+"loop": true,
+"name": &"mountains_close",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dgjee")
+}],
+"loop": true,
+"name": &"mountains_far",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_quimm")
+}],
+"loop": true,
+"name": &"mountains_mid",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yvlf7")
+}],
+"loop": true,
+"name": &"sky",
+"speed": 5.0
+}]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=4 uid="uid://cb2t52je7n4no"]
+[gd_scene load_steps=6 format=4 uid="uid://cb2t52je7n4no"]
 
 [ext_resource type="PackedScene" uid="uid://c268lwoyphi3" path="res://scenes/skateboard.tscn" id="1_4vdnk"]
+[ext_resource type="PackedScene" uid="uid://capo1kvc3gdeh" path="res://scenes/parallax.tscn" id="1_xt62j"]
 [ext_resource type="Texture2D" uid="uid://bx5nfcigt2gwt" path="res://assets/sprites/tileset.png" id="2_kqflh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xt62j"]
@@ -163,6 +164,8 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_xt62j")
 
 [node name="SkateboardGame" type="Node2D"]
+
+[node name="Parallax" parent="." instance=ExtResource("1_xt62j")]
 
 [node name="Skateboard" parent="." instance=ExtResource("1_4vdnk")]
 
