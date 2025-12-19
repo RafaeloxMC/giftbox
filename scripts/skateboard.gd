@@ -6,7 +6,7 @@ extends CharacterBody2D
 @export var brake_decel: float = 1200.0
 @export var ground_friction: float = 800.0
 @export var air_friction: float = 200.0
-@export var max_speed: float = 300.0
+@export var max_speed: float = 200.0
 @export var max_reverse_speed: float = 200.0
 @export var jump_velocity: float = -350.0
 
