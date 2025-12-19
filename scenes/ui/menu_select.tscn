@@ -1,0 +1,52 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsgvngb2cgdf6"]
+
+[ext_resource type="Texture2D" uid="uid://5ttg38a2b771" path="res://assets/sprites/menu_select.png" id="1_py4kb"]
+
+[node name="MenuSelect" type="Control"]
+layout_mode = 3
+anchor_right = 0.583
+anchor_bottom = 0.296
+offset_right = 480.38397
+offset_bottom = 456.19202
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PreviousItem" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 24.0
+offset_top = 64.0
+offset_right = 120.0
+offset_bottom = 128.0
+scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(48, 32)
+
+[node name="MenuSelect" type="Sprite2D" parent="PreviousItem"]
+position = Vector2(48, 32)
+texture = ExtResource("1_py4kb")
+
+[node name="SelectedItem" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 288.0
+offset_top = 64.0
+offset_right = 384.0
+offset_bottom = 128.0
+scale = Vector2(3, 3)
+pivot_offset = Vector2(48, 32)
+
+[node name="MenuSelect" type="Sprite2D" parent="SelectedItem"]
+position = Vector2(48, 31.999998)
+texture = ExtResource("1_py4kb")
+
+[node name="NextItem" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 552.0
+offset_top = 64.0
+offset_right = 648.0
+offset_bottom = 128.0
+scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(48, 32)
+
+[node name="MenuSelect" type="Sprite2D" parent="NextItem"]
+position = Vector2(48, 32)
+texture = ExtResource("1_py4kb")
