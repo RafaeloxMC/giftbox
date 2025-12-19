@@ -13,6 +13,9 @@ extends CharacterBody2D
 var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 var is_in_air: bool = false 
 
+func _ready() -> void:
+	animated_sprite_2d.animation_finished.connect(anim_finished)
+
 func _physics_process(delta: float) -> void:
 	var on_floor: bool = is_on_floor()
 	
@@ -44,3 +47,7 @@ func _physics_process(delta: float) -> void:
 	is_in_air = !on_floor
 	
 	move_and_slide()
+
+func anim_finished() -> void:
+	if animated_sprite_2d.animation == "jump" && self.is_on_floor():
+		animated_sprite_2d.play("idle")

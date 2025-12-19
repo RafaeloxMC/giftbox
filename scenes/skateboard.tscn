@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c268lwoyphi3"]
+[gd_scene load_steps=9 format=3 uid="uid://c268lwoyphi3"]
 
 [ext_resource type="Texture2D" uid="uid://bt3xymh5e82gw" path="res://assets/sprites/dexPack.png" id="1_78l3f"]
 [ext_resource type="Script" uid="uid://dxsuw78bwfjjw" path="res://scripts/skateboard.gd" id="1_ma3gn"]
@@ -6,10 +6,6 @@
 [sub_resource type="AtlasTexture" id="AtlasTexture_ma3gn"]
 atlas = ExtResource("1_78l3f")
 region = Rect2(16, 16, 32, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xjse7"]
-atlas = ExtResource("1_78l3f")
-region = Rect2(16, 144, 32, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x81ey"]
 atlas = ExtResource("1_78l3f")
@@ -35,9 +31,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xjse7")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_x81ey")
 }, {
 "duration": 1.0,
@@ -59,7 +52,7 @@ script = ExtResource("1_ma3gn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_xjse7")
-animation = &"idle"
+animation = &"jump"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4.5)
