@@ -28,9 +28,11 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("ui_right"):
 		target_vel_x = max_speed
 		velocity.x = move_toward(current_speed, target_vel_x, push_accel * delta)
+		animated_sprite_2d.flip_h = false
 	elif Input.is_action_pressed("ui_left"):
 		target_vel_x = -max_reverse_speed
 		velocity.x = move_toward(current_speed, target_vel_x, brake_decel * delta)
+		animated_sprite_2d.flip_h = true
 	else:
 		var friction: float = ground_friction if on_floor else air_friction
 		velocity.x = move_toward(current_speed, 0.0, friction * delta)
