@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bsgvngb2cgdf6"]
+[gd_scene load_steps=8 format=3 uid="uid://bsgvngb2cgdf6"]
 
 [ext_resource type="Script" uid="uid://ctexlhhg3e1mm" path="res://scripts/ui/menu_select.gd" id="1_7h74s"]
+[ext_resource type="Theme" uid="uid://ba5kc6y2xcxwb" path="res://assets/themes/theme.tres" id="1_h73q7"]
 [ext_resource type="Texture2D" uid="uid://5ttg38a2b771" path="res://assets/sprites/menu_select.png" id="1_py4kb"]
 [ext_resource type="Script" uid="uid://lwryc76ybwlx" path="res://scripts/menu_item.gd" id="2_m3nub"]
 
@@ -51,18 +52,20 @@ texture = ExtResource("1_py4kb")
 
 [node name="Title" type="Label" parent="PreviousItem/MenuSelect"]
 offset_left = -32.0
-offset_top = 2.0
+offset_top = 4.0
 offset_right = 32.0
-offset_bottom = 16.0
+offset_bottom = 18.0
+theme = ExtResource("1_h73q7")
 theme_override_font_sizes/font_size = 10
 text = "Title"
 
 [node name="Description" type="Label" parent="PreviousItem/MenuSelect"]
 offset_left = -32.0
-offset_top = 12.0
+offset_top = 14.0
 offset_right = 32.0
-offset_bottom = 26.0
-theme_override_constants/line_spacing = -4
+offset_bottom = 28.0
+theme = ExtResource("1_h73q7")
+theme_override_constants/line_spacing = -2
 theme_override_font_sizes/font_size = 6
 text = "This is a very good description"
 autowrap_mode = 3
@@ -83,18 +86,20 @@ texture = ExtResource("1_py4kb")
 
 [node name="Title" type="Label" parent="SelectedItem/MenuSelect"]
 offset_left = -32.0
-offset_top = 2.0
+offset_top = 4.000003
 offset_right = 32.0
-offset_bottom = 16.0
+offset_bottom = 18.000004
+theme = ExtResource("1_h73q7")
 theme_override_font_sizes/font_size = 10
 text = "Title"
 
 [node name="Description" type="Label" parent="SelectedItem/MenuSelect"]
 offset_left = -32.0
-offset_top = 12.0
+offset_top = 14.000003
 offset_right = 32.0
-offset_bottom = 26.0
-theme_override_constants/line_spacing = -4
+offset_bottom = 28.000004
+theme = ExtResource("1_h73q7")
+theme_override_constants/line_spacing = -2
 theme_override_font_sizes/font_size = 6
 text = "This is a very good description"
 autowrap_mode = 3
@@ -115,19 +120,21 @@ texture = ExtResource("1_py4kb")
 [node name="Title" type="Label" parent="NextItem"]
 layout_mode = 0
 offset_left = 16.000002
-offset_top = 34.666668
+offset_top = 36.0
 offset_right = 80.0
-offset_bottom = 48.666668
+offset_bottom = 50.0
+theme = ExtResource("1_h73q7")
 theme_override_font_sizes/font_size = 10
 text = "Title"
 
 [node name="Description" type="Label" parent="NextItem"]
 layout_mode = 0
 offset_left = 16.000002
-offset_top = 44.666668
+offset_top = 46.0
 offset_right = 80.0
-offset_bottom = 58.666668
-theme_override_constants/line_spacing = -4
+offset_bottom = 60.0
+theme = ExtResource("1_h73q7")
+theme_override_constants/line_spacing = -2
 theme_override_font_sizes/font_size = 6
 text = "This is a very good description"
 autowrap_mode = 3

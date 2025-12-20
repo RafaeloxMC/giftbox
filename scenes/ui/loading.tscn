@@ -1,7 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://bi0uvnu7iapm"]
+[gd_scene load_steps=21 format=3 uid="uid://bi0uvnu7iapm"]
 
 [ext_resource type="Script" uid="uid://060qpmslghm2" path="res://scripts/ui/loading.gd" id="1_0ih7j"]
 [ext_resource type="Texture2D" uid="uid://c6yip40t68inp" path="res://assets/sprites/gift.png" id="2_wkfxc"]
+[ext_resource type="Theme" uid="uid://ba5kc6y2xcxwb" path="res://assets/themes/theme.tres" id="3_wkfxc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ih7j"]
 bg_color = Color(1, 1, 1, 0)
@@ -228,6 +229,7 @@ offset_right = 57.0
 offset_bottom = 24.142853
 grow_horizontal = 2
 grow_vertical = 0
+theme = ExtResource("3_wkfxc")
 text = "click to open!"
 horizontal_alignment = 1
 
