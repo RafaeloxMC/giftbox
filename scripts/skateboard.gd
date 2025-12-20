@@ -3,8 +3,8 @@ extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 @export var push_accel: float = 200.0
-@export var brake_decel: float = 1200.0
-@export var ground_friction: float = 800.0
+@export var brake_decel: float = 200.0
+@export var ground_friction: float = 600.0
 @export var air_friction: float = 200.0
 @export var max_speed: float = 200.0
 @export var max_reverse_speed: float = 200.0
