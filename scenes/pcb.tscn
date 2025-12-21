@@ -91,6 +91,36 @@ theme = ExtResource("1_efhn6")
 text = "Press run to start the simulation!"
 horizontal_alignment = 1
 
+[node name="BatteryLabel" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 168.0
+offset_right = 376.0
+offset_bottom = 191.0
+theme = ExtResource("1_efhn6")
+text = "Battery"
+horizontal_alignment = 1
+
+[node name="ResistorLabel" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 520.0
+offset_top = 288.0
+offset_right = 592.0
+offset_bottom = 311.0
+theme = ExtResource("1_efhn6")
+text = "Resistor"
+horizontal_alignment = 1
+
+[node name="LEDLabel" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 384.0
+offset_right = 416.0
+offset_bottom = 407.0
+theme = ExtResource("1_efhn6")
+text = "LED"
+horizontal_alignment = 1
+
 [node name="Simulator" parent="." instance=ExtResource("8_wdhm5")]
 
 [connection signal="pressed" from="UI/Run" to="." method="_on_run_pressed"]
