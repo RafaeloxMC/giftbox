@@ -56,4 +56,6 @@ func tick() -> void:
 func submit() -> void:
 	if items[currently_selected].id == "q":
 		get_tree().quit()
+	else:
+		SceneManager.load_scene(items[currently_selected].id)
 	pass

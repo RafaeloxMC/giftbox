@@ -10,4 +10,4 @@ func _on_gui_input(event: InputEvent) -> void:
 		animation_player.play("switch_scene")
 
 func load_main_menu():
-	get_tree().change_scene_to_file("res://scenes/ui/main_menu.tscn")
+	SceneManager.load_scene("main_menu")

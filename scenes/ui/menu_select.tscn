@@ -7,7 +7,7 @@
 
 [sub_resource type="Resource" id="Resource_h73q7"]
 script = ExtResource("2_m3nub")
-id = "sb"
+id = "skateboard"
 name = "Skateboard"
 description = "A nice game about a skateboard!"
 metadata/_custom_type_script = "uid://lwryc76ybwlx"
