@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://b5826qe06yewk"]
+[gd_scene load_steps=3 format=3 uid="uid://b5826qe06yewk"]
 
+[ext_resource type="PackedScene" uid="uid://yioqbvieu2ja" path="res://scenes/ui/grid.tscn" id="1_4oelj"]
 [ext_resource type="Theme" uid="uid://ba5kc6y2xcxwb" path="res://assets/themes/theme.tres" id="1_efhn6"]
 
 [node name="Pcb" type="Control"]
@@ -13,6 +14,13 @@ offset_bottom = 648.0
 color = Color(0.14406255, 0.14406255, 0.14406255, 1)
 
 [node name="Board" type="Node2D" parent="."]
+
+[node name="Grid" parent="Board" instance=ExtResource("1_4oelj")]
+offset_right = 1152.0
+offset_bottom = 648.0
+space_between_x = 50
+space_between_y = 50
+grid_color = Color(0.3665946, 0.3665946, 0.36659458, 1)
 
 [node name="UI" type="Control" parent="."]
 anchors_preset = 0
