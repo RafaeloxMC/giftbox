@@ -1,14 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://unvdjqteji2b"]
+[gd_scene load_steps=6 format=3 uid="uid://unvdjqteji2b"]
 
 [ext_resource type="Script" uid="uid://cwqvh5oyy5447" path="res://scripts/util/scene_manager.gd" id="1_eoq3a"]
 [ext_resource type="PackedScene" uid="uid://bi0uvnu7iapm" path="res://scenes/ui/loading.tscn" id="2_jrjor"]
 [ext_resource type="PackedScene" uid="uid://dm2fla8egxejn" path="res://scenes/ui/main_menu.tscn" id="3_70vva"]
 [ext_resource type="PackedScene" uid="uid://cb2t52je7n4no" path="res://scenes/skateboard_game.tscn" id="4_s4cqx"]
+[ext_resource type="PackedScene" uid="uid://b5826qe06yewk" path="res://scenes/pcb.tscn" id="5_70vva"]
 
 [node name="SceneManager" type="Node"]
 script = ExtResource("1_eoq3a")
 scenes = Dictionary[String, PackedScene]({
 "loading": ExtResource("2_jrjor"),
 "main_menu": ExtResource("3_70vva"),
+"pcb": ExtResource("5_70vva"),
 "skateboard": ExtResource("4_s4cqx")
 })
