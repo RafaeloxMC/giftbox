@@ -11,7 +11,7 @@ func _input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT and not clicked_state:
 		clicked.emit(self)
 		clicked_state = true
-		print("PIN CLICKED " + self.name)
+		print("PIN CLICKED " + self.name + " for " + self.get_parent().get_parent().name)
 
 func connect_to(other: Pin):
 	if other == self:

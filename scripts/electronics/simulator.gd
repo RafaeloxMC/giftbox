@@ -1,44 +1,55 @@
 extends Node
 
 func evaluate(components: Array):
-	var battery: Battery = components.filter(func(c): return c is Battery).front()
+	var battery: Battery = null
+	var resistors: Array[Resistor] = []
+
+	for c in components:
+		if c is Battery:
+			battery = c
+		elif c is Resistor:
+			resistors.append(c)
+
 	if battery == null:
 		return
 
 	for c in components:
 		if c is LED:
 			var led: LED = c
-			var valid := _check_led(led, battery)
-			led.set_on(valid)
+			var powered := _is_led_powered(led, battery, resistors)
+			led.set_on(powered)
 
-func _check_led(led: LED, battery: Battery) -> bool:
-	var visited := []
-	return _dfs(
-		battery.get_positive_pin(),
-		led.anode,
-		battery.get_negative_pin(),
-		visited,
-		false
-	)
+func _is_led_powered(led: LED, battery: Battery, resistors: Array) -> bool:
+	print("Checking LED:", led.name)
+	print(" Anode reachable:", _reachable(battery.get_positive_pin(), led.anode))
+	print(" Cathode reachable:", _reachable(led.cathode, battery.get_negative_pin()))
+	
+	if not _reachable(battery.get_positive_pin(), led.anode):
+		return false
+		
+	if not _reachable(led.cathode, battery.get_negative_pin()):
+		return false
+		
+	if resistors.is_empty():
+		return false
+		
+	return true
 
-func _dfs(start: Pin, target: Pin, end: Pin, visited: Array, has_resistor: bool) -> bool:
-	if start in visited:
+func _reachable(start: Pin, target: Pin) -> bool:
+	var visited: Array[Pin] = []
+	return _dfs_simple(start, target, visited)
+
+func _dfs_simple(current: Pin, target: Pin, visited: Array) -> bool:
+	if current in visited:
 		return false
 
-	visited.append(start)
+	if current == target:
+		return true
 
-	if start == target:
-		return _dfs(target, end, end, visited, has_resistor)
+	visited.append(current)
 
-	if start == end:
-		return has_resistor
-
-	for next in start.connections:
-		var new_has_resistor = has_resistor or _pin_belongs_to_resistor(next)
-		if _dfs(next, target, end, visited, new_has_resistor):
+	for next in current.connections:
+		if _dfs_simple(next, target, visited):
 			return true
 
 	return false
-
-func _pin_belongs_to_resistor(pin: Pin) -> bool:
-	return pin.get_parent().get_parent() is Resistor

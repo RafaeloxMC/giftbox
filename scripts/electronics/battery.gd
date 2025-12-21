@@ -1,13 +1,13 @@
 extends Component
 class_name Battery
 
-@export var voltage := 5.0
+@export var voltage: float = 5.0
 
-@onready var anode: Pin = $Pins/Anode
-@onready var cathode: Pin = $Pins/Cathode
+@onready var positive_pin: Pin = $Pins/PositivePin
+@onready var negative_pin: Pin = $Pins/NegativePin
 
 func get_positive_pin() -> Pin:
-	return anode
+	return positive_pin
 
 func get_negative_pin() -> Pin:
-	return cathode
+	return negative_pin

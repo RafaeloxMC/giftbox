@@ -37,7 +37,7 @@ grid_color = Color(0.3665946, 0.3665946, 0.36659458, 1)
 position = Vector2(328, 200)
 
 [node name="Led" parent="Board/Components" instance=ExtResource("4_ys0mt")]
-position = Vector2(368, 296)
+position = Vector2(368, 408)
 
 [node name="Resistor" parent="Board/Components" instance=ExtResource("5_wdhm5")]
 position = Vector2(536, 312)

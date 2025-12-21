@@ -5,5 +5,4 @@ class_name Component
 @export var pins: Array[Pin] = []
 
 func get_pins() -> Array[Pin]:
-	print("Called get_pins for " + self.name)
 	return pins
