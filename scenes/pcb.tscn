@@ -1,19 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5826qe06yewk"]
+[gd_scene load_steps=9 format=3 uid="uid://b5826qe06yewk"]
 
 [ext_resource type="PackedScene" uid="uid://yioqbvieu2ja" path="res://scenes/ui/grid.tscn" id="1_4oelj"]
 [ext_resource type="Theme" uid="uid://ba5kc6y2xcxwb" path="res://assets/themes/theme.tres" id="1_efhn6"]
+[ext_resource type="Script" uid="uid://h6sqwqh1wuww" path="res://scripts/electronics/board.gd" id="1_i3rn4"]
+[ext_resource type="PackedScene" uid="uid://y6s50ductg4e" path="res://scenes/electronics/battery.tscn" id="3_cyyu8"]
+[ext_resource type="PackedScene" uid="uid://bragwg6xxtiin" path="res://scenes/electronics/led.tscn" id="4_ys0mt"]
+[ext_resource type="PackedScene" uid="uid://ddwq60hl3x1ut" path="res://scenes/electronics/resistor.tscn" id="5_wdhm5"]
+[ext_resource type="Script" uid="uid://w6rn66dnd763" path="res://scripts/ui/pcb_ui.gd" id="6_ys0mt"]
+[ext_resource type="PackedScene" uid="uid://vodlkw4qhp6l" path="res://scenes/electronics/simulator.tscn" id="8_wdhm5"]
 
 [node name="Pcb" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("6_ys0mt")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
+mouse_filter = 2
 color = Color(0.14406255, 0.14406255, 0.14406255, 1)
 
 [node name="Board" type="Node2D" parent="."]
+script = ExtResource("1_i3rn4")
 
 [node name="Grid" parent="Board" instance=ExtResource("1_4oelj")]
 offset_right = 1152.0
@@ -22,10 +31,22 @@ space_between_x = 50
 space_between_y = 50
 grid_color = Color(0.3665946, 0.3665946, 0.36659458, 1)
 
+[node name="Components" type="Node2D" parent="Board"]
+
+[node name="Battery" parent="Board/Components" instance=ExtResource("3_cyyu8")]
+position = Vector2(328, 200)
+
+[node name="Led" parent="Board/Components" instance=ExtResource("4_ys0mt")]
+position = Vector2(368, 296)
+
+[node name="Resistor" parent="Board/Components" instance=ExtResource("5_wdhm5")]
+position = Vector2(536, 312)
+
 [node name="UI" type="Control" parent="."]
 anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 648.0
+mouse_filter = 2
 
 [node name="Run" type="Button" parent="UI"]
 layout_mode = 0
@@ -53,3 +74,25 @@ offset_right = 1144.0
 offset_bottom = 34.0
 theme = ExtResource("1_efhn6")
 text = "Hint"
+
+[node name="HintLabel" type="Label" parent="UI"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -576.0
+offset_top = -23.0
+offset_right = 576.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_efhn6")
+text = "Press run to start the simulation!"
+horizontal_alignment = 1
+
+[node name="Simulator" parent="." instance=ExtResource("8_wdhm5")]
+
+[connection signal="pressed" from="UI/Run" to="." method="_on_run_pressed"]
+[connection signal="pressed" from="UI/Clear" to="." method="_on_clear_pressed"]
+[connection signal="pressed" from="UI/Hint" to="." method="_on_hint_pressed"]

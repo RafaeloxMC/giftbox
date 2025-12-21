@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://y6s50ductg4e"]
+
+[ext_resource type="Script" uid="uid://dofu6v38w6gjj" path="res://scripts/electronics/battery.gd" id="1_6oi3y"]
+[ext_resource type="PackedScene" uid="uid://cgv64wwg2hl7c" path="res://scenes/electronics/pin.tscn" id="2_41njs"]
+
+[node name="Battery" type="Node2D" node_paths=PackedStringArray("pins")]
+script = ExtResource("1_6oi3y")
+component_name = "Battery"
+pins = [NodePath("Pins/Anode"), NodePath("Pins/Cathode")]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Pins" type="Node2D" parent="."]
+
+[node name="Anode" parent="Pins" instance=ExtResource("2_41njs")]
+position = Vector2(0, 16)
+
+[node name="Cathode" parent="Pins" instance=ExtResource("2_41njs")]
+position = Vector2(40, 16)

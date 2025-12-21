@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://vodlkw4qhp6l"]
+
+[ext_resource type="Script" uid="uid://dnn10wdekshcw" path="res://scripts/electronics/simulator.gd" id="1_jn1k2"]
+
+[node name="Simulator" type="Node"]
+script = ExtResource("1_jn1k2")

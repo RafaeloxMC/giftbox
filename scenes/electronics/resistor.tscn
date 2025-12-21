@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddwq60hl3x1ut"]
+
+[ext_resource type="Script" uid="uid://cqhrqaw400ojv" path="res://scripts/electronics/resistor.gd" id="1_a77i0"]
+[ext_resource type="PackedScene" uid="uid://cgv64wwg2hl7c" path="res://scenes/electronics/pin.tscn" id="2_gkerm"]
+
+[node name="Resistor" type="Node2D" node_paths=PackedStringArray("pins")]
+script = ExtResource("1_a77i0")
+component_name = "Resistor"
+pins = [NodePath("Pins/Anode"), NodePath("Pins/Cathode")]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 16.0
+
+[node name="Pins" type="Node2D" parent="."]
+
+[node name="Anode" parent="Pins" instance=ExtResource("2_gkerm")]
+position = Vector2(0, 8)
+
+[node name="Cathode" parent="Pins" instance=ExtResource("2_gkerm")]
+position = Vector2(40, 8)

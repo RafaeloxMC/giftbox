@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bragwg6xxtiin"]
+
+[ext_resource type="Script" uid="uid://booc8a06h4ov1" path="res://scripts/electronics/led.gd" id="1_1da4t"]
+[ext_resource type="PackedScene" uid="uid://cgv64wwg2hl7c" path="res://scenes/electronics/pin.tscn" id="2_bxrkn"]
+
+[node name="Led" type="Node2D" node_paths=PackedStringArray("pins")]
+script = ExtResource("1_1da4t")
+component_name = "LED"
+pins = [NodePath("Pins/Anode"), NodePath("Pins/Cathode")]
+
+[node name="Glow" type="Panel" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Pins" type="Node2D" parent="."]
+
+[node name="Anode" parent="Pins" instance=ExtResource("2_bxrkn")]
+position = Vector2(8, 40)
+
+[node name="Cathode" parent="Pins" instance=ExtResource("2_bxrkn")]
+position = Vector2(32, 40)
