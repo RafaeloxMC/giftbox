@@ -10,7 +10,7 @@ extends CharacterBody2D
 @export var air_friction: float = 200.0
 @export var max_speed: float = 200.0
 @export var max_reverse_speed: float = 200.0
-@export var jump_velocity: float = -250.0
+@export var jump_velocity: float = -275.0
 
 var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 var is_in_air: bool = false 
