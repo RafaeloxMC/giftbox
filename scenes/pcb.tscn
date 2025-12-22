@@ -122,6 +122,7 @@ text = "LED"
 horizontal_alignment = 1
 
 [node name="Note" type="Label" parent="UI"]
+visible = false
 layout_mode = 0
 offset_left = 896.0
 offset_top = 32.0
