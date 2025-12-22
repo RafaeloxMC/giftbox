@@ -50,30 +50,30 @@ mouse_filter = 2
 
 [node name="Run" type="Button" parent="UI"]
 layout_mode = 0
-offset_left = 976.0
+offset_left = 968.0
 offset_top = 8.0
-offset_right = 1010.0
+offset_right = 1002.0
 offset_bottom = 34.0
 theme = ExtResource("1_efhn6")
 text = "Run"
 
 [node name="Clear" type="Button" parent="UI"]
 layout_mode = 0
-offset_left = 1034.0
+offset_left = 1026.0
 offset_top = 8.0
-offset_right = 1082.0
+offset_right = 1074.0
 offset_bottom = 34.0
 theme = ExtResource("1_efhn6")
 text = "Clear"
 
 [node name="Hint" type="Button" parent="UI"]
 layout_mode = 0
-offset_left = 1106.0
+offset_left = 1098.0
 offset_top = 8.0
 offset_right = 1144.0
 offset_bottom = 34.0
 theme = ExtResource("1_efhn6")
-text = "Hint"
+text = "Note"
 
 [node name="HintLabel" type="Label" parent="UI"]
 layout_mode = 1
@@ -120,6 +120,20 @@ offset_bottom = 407.0
 theme = ExtResource("1_efhn6")
 text = "LED"
 horizontal_alignment = 1
+
+[node name="Note" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 896.0
+offset_top = 32.0
+offset_right = 1144.0
+offset_bottom = 637.0
+theme = ExtResource("1_efhn6")
+text = "Hey there! First of all, thank you for playing this! This is my attempt on an electrical simulator. Turns out: it is not as easy as it looks. I tried my best to implement as many features as possible but due to limited time, this is all I could come up with. The resistor is pretty much just an internally connected wire, so you can just leave it out - it has no use case. The battery and LED can be connected with + (red) and - (blue). The \"clear\" button clears the sketch you made (at least all the wires) and the \"run\" button starts the simulation!
+have fun!
+(PS: there are no short circuits in this, so rather use your brain than this to test your circuits :pf:)"
+horizontal_alignment = 2
+vertical_alignment = 2
+autowrap_mode = 3
 
 [node name="Simulator" parent="." instance=ExtResource("8_wdhm5")]
 

@@ -4,6 +4,7 @@ extends Control
 @onready var components: Node2D = $Board/Components
 @onready var simulator: Node = $Simulator
 @onready var hint_label: Label = $UI/HintLabel
+@onready var note: Label = $UI/Note
 
 func _on_run_pressed() -> void:
 	var comps = components.get_children()
@@ -19,4 +20,4 @@ func _on_clear_pressed() -> void:
 
 
 func _on_hint_pressed() -> void:
-	pass # Replace with function body.
+	note.visible = !note.visible
