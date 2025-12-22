@@ -130,7 +130,7 @@ offset_bottom = 637.0
 theme = ExtResource("1_efhn6")
 text = "Hey there! First of all, thank you for playing this! This is my attempt on an electrical simulator. Turns out: it is not as easy as it looks. I tried my best to implement as many features as possible but due to limited time, this is all I could come up with. The resistor is pretty much just an internally connected wire, so you can just leave it out - it has no use case. The battery and LED can be connected with + (red) and - (blue). The \"clear\" button clears the sketch you made (at least all the wires) and the \"run\" button starts the simulation!
 have fun!
-(PS: there are no short circuits in this, so rather use your brain than this to test your circuits :pf:)"
+(PS: there are no short circuits in this, so you should rather use your brain than this to test your circuits :) )"
 horizontal_alignment = 2
 vertical_alignment = 2
 autowrap_mode = 3
