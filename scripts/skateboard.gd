@@ -55,7 +55,8 @@ func _physics_process(delta: float) -> void:
 	
 	score = max(score, self.position.x / 10)
 	score_label.text = "Score: " + str(roundi(score))
-	high_score_label.text = "High Score: " + str(high_score)
+	GameManager.high_score = max(GameManager.high_score, score)
+	high_score_label.text = "High Score: " + str(roundi(GameManager.high_score))
 	
 	move_and_slide()
 
