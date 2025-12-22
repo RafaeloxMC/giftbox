@@ -53,3 +53,16 @@ func _dfs_simple(current: Pin, target: Pin, visited: Array) -> bool:
 			return true
 
 	return false
+
+func clear(components: Array):
+	for c in components:
+		if c is LED:
+			c.set_on(false)
+
+		if c.has_method("get_pins"):
+			for pin in c.get_pins():
+				pin.disconnect_all()
+	
+	for c in components:
+		if c is Resistor:
+			c.pin_a.connect_to(c.pin_b)

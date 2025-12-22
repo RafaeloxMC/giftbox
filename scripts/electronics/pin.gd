@@ -25,3 +25,6 @@ func is_connected_to(other: Pin) -> bool:
 
 func _process(_delta: float) -> void:
 	clicked_state = false
+
+func disconnect_all() -> void:
+	connections.clear()

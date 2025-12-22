@@ -12,7 +12,10 @@ func _on_run_pressed() -> void:
 
 
 func _on_clear_pressed() -> void:
-	pass # Replace with function body.
+	var comps = components.get_children()
+	simulator.clear(comps)
+	board.queue_redraw()
+	hint_label.text = "Board cleared"
 
 
 func _on_hint_pressed() -> void:
