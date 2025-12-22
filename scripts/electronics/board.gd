@@ -30,9 +30,9 @@ func _draw():
 func _on_pin_clicked(pin: Pin):
 	if selected_pin == null:
 		selected_pin = pin
-		pin.modulate = Color.YELLOW
+		pin.modulate.a = 0.5
 	else:
 		selected_pin.connect_to(pin)
-		selected_pin.modulate = Color.WHITE
+		selected_pin.modulate.a = 1
 		selected_pin = null
 		queue_redraw()
