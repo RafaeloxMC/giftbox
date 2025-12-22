@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var score_label: Label = $Camera2D/CanvasLayer/UI/Score
+@onready var high_score_label: Label = $Camera2D/CanvasLayer/UI/HighScore
 
 @export var push_accel: float = 200.0
 @export var brake_decel: float = 200.0
@@ -12,6 +14,9 @@ extends CharacterBody2D
 
 var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 var is_in_air: bool = false 
+
+var score = 0
+var high_score = 0
 
 func _ready() -> void:
 	animated_sprite_2d.animation_finished.connect(anim_finished)
@@ -47,6 +52,10 @@ func _physics_process(delta: float) -> void:
 	velocity.x = clamp(velocity.x, -max_reverse_speed, max_speed)
 	
 	is_in_air = !on_floor
+	
+	score = max(score, self.position.x / 10)
+	score_label.text = "Score: " + str(roundi(score))
+	high_score_label.text = "High Score: " + str(high_score)
 	
 	move_and_slide()
 

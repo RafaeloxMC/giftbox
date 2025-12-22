@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://c268lwoyphi3"]
+[gd_scene load_steps=10 format=3 uid="uid://c268lwoyphi3"]
 
 [ext_resource type="Texture2D" uid="uid://bt3xymh5e82gw" path="res://assets/sprites/dexPack.png" id="1_78l3f"]
 [ext_resource type="Script" uid="uid://dxsuw78bwfjjw" path="res://scripts/skateboard.gd" id="1_ma3gn"]
+[ext_resource type="Theme" uid="uid://ba5kc6y2xcxwb" path="res://assets/themes/theme.tres" id="3_xjse7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ma3gn"]
 atlas = ExtResource("1_78l3f")
@@ -61,7 +62,37 @@ shape = SubResource("RectangleShape2D_x81ey")
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(0, -20)
 zoom = Vector2(4, 4)
-limit_top = -160
-limit_bottom = 81
+limit_top = -159
+limit_bottom = 82
 limit_smoothed = true
 position_smoothing_enabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
+layer = 0
+
+[node name="UI" type="Control" parent="Camera2D/CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -1.0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Score" type="Label" parent="Camera2D/CanvasLayer/UI"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 9.0
+offset_right = 228.0
+offset_bottom = 63.0
+theme = ExtResource("3_xjse7")
+theme_override_font_sizes/font_size = 48
+text = "Score: 0"
+
+[node name="HighScore" type="Label" parent="Camera2D/CanvasLayer/UI"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 65.0
+offset_right = 340.0
+offset_bottom = 119.0
+theme = ExtResource("3_xjse7")
+theme_override_font_sizes/font_size = 48
+text = "High Score: 0"
