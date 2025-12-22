@@ -110,3 +110,19 @@ offset_right = 336.096
 offset_bottom = 150.09601
 scale = Vector2(1.25, 1.25)
 pivot_offset = Vector2(335, 100)
+
+[node name="Hint" type="Label" parent="ColorRect/UIElements"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -167.0
+offset_top = 107.25
+offset_right = 167.0
+offset_bottom = 130.25
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_fe2o3")
+text = "Use the arrow keys & space to navigate!"
