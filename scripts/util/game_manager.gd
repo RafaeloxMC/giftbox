@@ -11,3 +11,7 @@ func play_ambience():
 	
 func stop_ambience():
 	audio_stream_player.stop()
+
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("esc"):
+		SceneManager.load_scene("main_menu")
