@@ -24,6 +24,7 @@ pins = [NodePath("Pins/Anode"), NodePath("Pins/Cathode")]
 
 [node name="Glow" type="Panel" parent="."]
 modulate = Color(1, 1, 1, 0.49803922)
+z_index = 1
 offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
