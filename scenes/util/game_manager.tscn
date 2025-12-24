@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://twhkljlal1a4"]
+[gd_scene load_steps=3 format=3 uid="uid://twhkljlal1a4"]
 
 [ext_resource type="Script" uid="uid://coajkmov40u34" path="res://scripts/util/game_manager.gd" id="1_73iwl"]
+[ext_resource type="AudioStream" uid="uid://b6ripmdn4fuep" path="res://assets/audio/ambience.mp3" id="2_54qm4"]
 
 [node name="GameManager" type="Node"]
 script = ExtResource("1_73iwl")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_54qm4")
+volume_db = -10.495

@@ -10,3 +10,4 @@ func load_scene(scene: String) -> void:
 
 func load_packed(scene: PackedScene) -> void:
 	get_tree().change_scene_to_packed(scene)
+	GameManager.stop_ambience()

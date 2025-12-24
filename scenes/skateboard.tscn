@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://c268lwoyphi3"]
+[gd_scene load_steps=11 format=3 uid="uid://c268lwoyphi3"]
 
 [ext_resource type="Texture2D" uid="uid://bt3xymh5e82gw" path="res://assets/sprites/dexPack.png" id="1_78l3f"]
 [ext_resource type="Script" uid="uid://dxsuw78bwfjjw" path="res://scripts/skateboard.gd" id="1_ma3gn"]
 [ext_resource type="Theme" uid="uid://ba5kc6y2xcxwb" path="res://assets/themes/theme.tres" id="3_xjse7"]
+[ext_resource type="AudioStream" uid="uid://51jmlf48n8wn" path="res://assets/audio/skateboard.mp3" id="4_x81ey"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ma3gn"]
 atlas = ExtResource("1_78l3f")
@@ -96,3 +97,6 @@ offset_bottom = 119.0
 theme = ExtResource("3_xjse7")
 theme_override_font_sizes/font_size = 48
 text = "High Score: 0"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_x81ey")
